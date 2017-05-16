@@ -1,9 +1,10 @@
-<?php 
+<?php
     $page_title = 'Join';
     $site_title = 'Purdue IEEE';
     $site_index = '/';
     $root = true;
     include 'header.php';
+    require_once 'DirectoryServices/lists.php';
 ?>
 
     <div class="well card-1">
@@ -12,22 +13,16 @@
                 <h1 class="text-center">Subscribe to our Mailing Lists</h1>
 
                 <div class="col-md-8 col-md-offset-2 text-dark" id="content">
-                <form id="signup-form" action="signup_post.php" title="" method="post" style="font-size: 18px">
-                    <label>Signup for our main mailing list, IEEE-Announcements, below!</label><br><br>
-                    <label>Name:</label>
-                    <input type="name" id="name" name="name" class="form-control">
-                    <label>Email:</label>
+                <form id="signup-form" action="DirectoryServices/directories.php" title="" method="post" style="font-size: 18px">
+                    <label>Signup for our announcements mailing list (Email): </label><br>
                     <input type="email" id="email" name="email" class="form-control"><br>
 
-                    <label>Which Technical Committees would you like to join/receive emails from?</label>
+                    <label>Which technical committees would you like to additionally receive emails from?</label>
                     <div class="checkbox" style="margin-top: 0">
-                        <label><input class="tc-check" type="checkbox" name="list[]" value="aerial">Aerial Robotics</label><br>
-                        <label><input class="tc-check" type="checkbox" name="list[]" value="csociety">Computer Society</label><br>
-                        <label><input class="tc-check" type="checkbox" name="list[]" value="embs">Engineering in Medicine and Biology Society</label><br>
-                        <label><input class="tc-check" type="checkbox" name="list[]" value="mtts">Microwave Theory &amp; Techniques Society</label><br>
-                        <label><input class="tc-check" type="checkbox" name="list[]" value="racing">Racing</label><br>
-                        <label><input class="tc-check" type="checkbox" name="list[]" value="rov">Remotely Operated underwater Vehicle (ROV)</label><br>
-                        <input type="checkbox" name="list[]" checked="true" value="announcements" hidden>
+                        <?php foreach (Lists::all(true) as $key => $value): if ($key !== 'ieee-announcements'): ?>
+                        <label><input class="tc-check" type="checkbox" name="list[]" value="<?php echo $key; ?>"><?php echo $value; ?></label><br>
+                        <?php endif; endforeach; ?>
+                        <input type="checkbox" name="list[]" checked="true" value="ieee-announcements" hidden>
                     </div>
 
                     <button class="btn btn-primary btn-raised ripple-effect" type="submit" value="submit">Submit</button>
@@ -48,8 +43,8 @@
                             return $(this).val();
                         }).get();
 
-                        var posting = $.post(url, { 
-                            email: $('#email').val(), 
+                        var posting = $.post(url, {
+                            email: $('#email').val(),
                             list: list
                         });
 
@@ -103,8 +98,6 @@
                     </ul>
                     To pay dues, please contact the Treasurer, Bobby Zhang, at <a href="mailto:IEEE-Treas@purdueieee.org">IEEE-Treas@purdueieee.org</a>, go to EE 014 and use leave your email and dues with a Treasurer-authorized attendant inside the office, or give it to the Treasurer at General Assemblies.
                 </p>
-
-
             </div>
         </div>
     </div>

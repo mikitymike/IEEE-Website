@@ -1,4 +1,4 @@
-<?php 
+<?php
     $page_title = '2015 Officers';
     $site_title = 'Purdue IEEE';
     $site_index = '/';
@@ -12,24 +12,10 @@
         <div class="row text-center">
             <div class="col-lg-12">
                 <ul class="pagination">
-                    <li>
-                        <a href="2011.php">2011</a>
-                    </li>
-                    <li>
-                        <a href="2012.php">2012</a>
-                    </li>
-                    <li>
-                        <a href="2013.php">2013</a>
-                    </li>
-                    <li>
-                        <a href="2014.php">2014</a>
-                    </li>
-                    <li class="active">
-                        <a href="#">2015</a>
-                    </li>
-                    <li>
-                        <a href="2016.php">2016</a>
-                    </li>
+                    <?php
+                        $year = 2015;
+                        include 'header.php';
+                    ?>
                 </ul>
             </div>
         </div>
@@ -193,7 +179,7 @@
                 <p><em>Committee Involvement</em>: <a href="/embs/">EMBS</a></a></p>
             </div>
         </div>
-
+        <hr>
         <!-- Committee Chair #3 -->
         <div class="row">
             <div class="col-md-3">

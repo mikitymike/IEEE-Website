@@ -2,7 +2,7 @@
     $page_title = 'Purdue IEEE';
     $site_title = 'Purdue IEEE';
     $site_index = '/';
-    
+
     //Output js in footer to load carousel
     $carousel = true;
     $root = true;
@@ -47,6 +47,12 @@
                         </div>
                     </div>
                     <div class="item">
+                        <div class="fill" style="background-image:url('/images/mtt-s.jpg');"></div>
+                        <div class="carousel-caption">
+                            <h2>MTT-S</h2>
+                        </div>
+                    </div>
+                    <div class="item">
                         <div class="fill" style="background-image:url('/images/racing.jpg');"></div>
                         <div class="carousel-caption">
                             <h2>Racing</h2>
@@ -71,30 +77,28 @@
         </div>
     </div>
 
-    <!-- Upcoming Event List -->
-    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-
-    <br />
-    <div class="well card-1 text-dark">
-        <div class="row">
-            <div class="col-md-12">
-                <h2><b>Learning Workshops</b></h2>
-            </div>
-        </div>
-        <hr />
-        <div class="row">
-            <div class="col-md-12">
-                <div class="media">
-                    <div class="media-body">
+	<!-- Upcoming Event List -->
+	<!---<br>
+  <div class="well card-1 text-dark">
+         <div class="row">
+             <div class="col-md-12">
+                 <h2><b>Upcoming Events</b></h2>
+             </div>
+         </div>
+         <hr />
+         <div class="row">
+             <div class="col-md-12">
+                 <div class="media">
+                     <div class="media-body">
                         <?php include 'events.php' ?>
-                    </div>
-                </div>
-            </div>
-    </div>
-    </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div> -->
+
 
     <!-- Committeee List -->
-    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
     <br />
     <div class="well card-1 text-dark">
         <div class="row">
